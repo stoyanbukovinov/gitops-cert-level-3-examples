@@ -12,6 +12,8 @@ spec:
         owner: stoyanbukovinov
         repo: gitops-cert-level-3-examples
       requeueAfterSeconds: 180
+      labels:
+        - preview-ready
   template:
     metadata:
       name: 'myapp-{{.branch}}'
@@ -31,4 +33,4 @@ spec:
         automated:
           prune: true  
         syncOptions:
-        - CreateNamespace=true 
+        - CreateNamespace=true
