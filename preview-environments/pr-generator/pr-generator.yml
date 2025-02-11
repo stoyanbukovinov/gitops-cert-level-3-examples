@@ -12,8 +12,9 @@ spec:
         owner: stoyanbukovinov
         repo: gitops-cert-level-3-examples
       requeueAfterSeconds: 180
-      labels:
-        - preview-ready
+      labelSelector:
+        matchLabels:
+          preview-ready: "true"
   template:
     metadata:
       name: 'myapp-{{.branch}}'
